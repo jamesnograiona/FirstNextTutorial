@@ -1,4 +1,6 @@
 import { useRouter } from 'next/router'
+import Link from 'next/link'
+
 
 const article = ({ mainArticle }) => {
     const router = useRouter()
@@ -9,7 +11,7 @@ const article = ({ mainArticle }) => {
         <div>
             <small>Viewing article {mainArticle.id}...</small>
             <h3>Title: {mainArticle.title}</h3>
-            
+            <Link href="/articles">Go Back</Link>
         </div>
     )
 }
