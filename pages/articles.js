@@ -7,14 +7,14 @@ export default function Articles({ articles }) {
         <div>
             <h1>Articles</h1>
             {articles.map((article) => (
-                <Article article={article} />
+                <Article key={article.id} article={article} />
             ))}
         </div>
     )
 }
 
 export const getStaticProps = async () => {
-    const res = await fetch('https://my-json-server.typicode.com/typicode/demo/posts')
+    const res = await fetch(`https://my-json-server.typicode.com/typicode/demo/posts`)
     const articles = await res.json();
 
     return {
